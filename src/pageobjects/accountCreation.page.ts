@@ -44,26 +44,34 @@ class AccountCreationPage  {
 
   get deletingIsComplete () { return $('//b[text()="Account Deleted!"]')};
 
-  get continueBtnLoc () { return $('(//a[@href="/"])[2]')};
-
   get deliveryFullNameCheckout () { return $('(//ul[contains(@class,"address item")]//li)[2]')};
+
   get deliveryCompanyCheckout () { return $('(//ul[contains(@class,"address item")]//li)[3]')};
+
   get deliveryAddress1Checkout () { return $('(//ul[contains(@class,"address item")]//li)[4]')};
+
   get deliveryAddress2Checkout () { return $('(//ul[contains(@class,"address item")]//li)[5]')};
+
   get deliveryCityAndStateAndPostCodeCheckout () { return $('(//ul[contains(@class,"address item")]//li)[6]')};
+
   get deliveryCountryCheckout () { return $('(//ul[contains(@class,"address item")]//li)[7]')};
+
   get deliveryPhoneCheckout () { return $('(//ul[contains(@class,"address item")]//li)[8]')};
 
   get billingFullNameCheckout () { return $('//ul[@id="address_invoice"]/li[2]')};
+
   get billingCompanyCheckout () { return $('//ul[@id="address_invoice"]/li[3]')};
+
   get billingAddress1Checkout () { return $('//ul[@id="address_invoice"]/li[4]')};
+
   get billingAddress2Checkout () { return $('//ul[@id="address_invoice"]/li[5]')};
+
   get billingCityAndStateAndPostCodeCheckout () { return $('//ul[@id="address_invoice"]/li[6]')};
+
   get billingCountryCheckout () { return $('//ul[@id="address_invoice"]/li[7]')};
+
   get billingPhoneCheckout () { return $('//ul[@id="address_invoice"]/li[8]')};
 
-  
-  
   testPerson = {
     firstName:'Alex', 
     lastName:'Morales',
@@ -97,9 +105,9 @@ class AccountCreationPage  {
    await this.firstName.setValue(this.testPerson.firstName);
    await this.lastName.setValue(this.testPerson.lastName);
    await this.password.setValue(this.testPerson.password);
-    await this.dayOfBirth.selectByVisibleText(this.testPerson.day);
-    await this.monthOfBirth.selectByVisibleText(this.testPerson.month);
-    await this.yearOfBirth.selectByVisibleText(this.testPerson.year);
+   await this.dayOfBirth.selectByVisibleText(this.testPerson.day);
+   await this.monthOfBirth.selectByVisibleText(this.testPerson.month);
+   await this.yearOfBirth.selectByVisibleText(this.testPerson.year);
    await this.newsletterCheckbox.click();
    await this.specialOffersCheckbox.click();
    await this.company.setValue(this.testPerson.company);
@@ -114,21 +122,20 @@ class AccountCreationPage  {
 
 
   async submitAccountCreationForm() {
-   await this.createAccountButton.click();
+    await this.createAccountButton.click();
   }
 
   async verifyRegistrationIsComplete() {
     await this.registrationComplete.waitForExist();
-    expect(await this.registrationComplete).toBeDisplayed()
-   }
+    expect(await this.registrationComplete).toBeDisplayed();
+  }
 
   async verifyDeleteIsComplete() {
     await this.deletingIsComplete.waitForExist();
-    expect(await this.deletingIsComplete).toBeDisplayed()
-    
-   }
-   
-   async expectDeliveryForm() {
+    expect(await this.deletingIsComplete).toBeDisplayed();
+  }
+
+  async expectDeliveryForm() {
     expect (await this.deliveryFullNameCheckout).toHaveText('Mr. Alex Morales');
     expect (await this.deliveryCompanyCheckout).toHaveText(this.testPerson.company);
     expect (await this.deliveryAddress1Checkout).toHaveText(this.testPerson.address1);
@@ -147,7 +154,7 @@ class AccountCreationPage  {
     expect (await this.billingCityAndStateAndPostCodeCheckout).toHaveText('Tbilisi Georgia 220110');
     expect (await this.billingCountryCheckout).toHaveText(this.testPerson.country);
     expect (await this.billingPhoneCheckout).toHaveText(this.testPerson.mobilePhone);
-}
+  }
 
 }
 
