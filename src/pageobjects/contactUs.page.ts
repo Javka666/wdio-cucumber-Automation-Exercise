@@ -38,7 +38,8 @@ class ContactUsPage {
   }
 
   async clickSubmitButton() {
-    await this.submitButton.click();
+    await this.submitButton.scrollIntoView({ block: 'center', inline: 'center' });
+    await this.submitButton.click({ force: true }as any);
     await browser.waitUntil(async () => {
       return await browser.getAlertText() !== null;
     });

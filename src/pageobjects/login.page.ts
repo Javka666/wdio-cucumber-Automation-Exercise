@@ -92,6 +92,15 @@ class LoginPage {
     await this.loginBtnLoc.click()
   }
 
+  async typeInCorrectCredentials () {
+    const email = "alexM@mail.com";
+    const pass = "123";
+    await this.loginEmailInputLoc.waitForExist();
+    await this.loginEmailInputLoc.setValue(email);
+    await this.loginPasswordInputLoc.setValue(pass);
+    await this.loginBtnLoc.click()
+  }
+
   async verifyExistingCredsErrorIsVisible() {
     await this.existingEmailError.waitForExist();
     expect(await this.existingEmailError).toBeDisplayed()

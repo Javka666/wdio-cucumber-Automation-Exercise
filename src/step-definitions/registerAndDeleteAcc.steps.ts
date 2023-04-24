@@ -35,8 +35,13 @@ Then('"ACCOUNT CREATED!" is visible.', async () => {
 });
 
 When('I login with correct email and password.', async () => {
+  await LoginPage.typeInCorrectCredentials();
+});
+
+When('I login with correct credentials.', async () => {
   await LoginPage.inputCorrectCredentials();
 });
+
 
 Then('I should see "ACCOUNT DELETED!" is visible.', async () => {
   await AccountCreationPage.verifyDeleteIsComplete();

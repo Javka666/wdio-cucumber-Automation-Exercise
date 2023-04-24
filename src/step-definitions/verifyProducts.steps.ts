@@ -139,7 +139,7 @@ When('Click "Cart" button and verify that product is visible in cart.', async ()
 
 When('Click "SignupOrLogin" button and submit login details.', async () => {
   await MainPage.clickLoginButton();
-  await LoginPage.inputCorrectCredentials();
+  await LoginPage.typeInCorrectCredentials();
 });
 
 

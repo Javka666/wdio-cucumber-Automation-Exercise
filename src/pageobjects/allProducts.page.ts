@@ -52,7 +52,6 @@ class AllProductsPage {
  
 
   async navigate() {
-    await browser.setWindowSize(1440,900);
     await browser.url("https://automationexercise.com/");
   }
 
@@ -114,7 +113,8 @@ class AllProductsPage {
   }
 
   async clickMenCategoryButton() {
-    await this.menCategory.click();
+    await this.menCategory.scrollIntoView();
+    await this.menCategory.click({force: true}as any);
   }
 
   async expectWomenTopsHeaderIsVisible() {
@@ -127,7 +127,8 @@ class AllProductsPage {
   }
 
   async clickMenTShirtsCategoryButton() {
-    await this.menTShirtsCategory.click();
+    await this.menTShirtsCategory.scrollIntoView();
+    await this.menTShirtsCategory.click({force: true}as any);
   }
 
   async expectTshirtsPageIsOpen() {
@@ -192,9 +193,9 @@ class AllProductsPage {
     if (await this.selectedItemInRecommended.isDisplayed()) {
       await this.selectedItemAddToCartBtn.click({force: true} as any);
     } else {
-      await this.scrollRecommendedSlide.click();
+      await this.scrollRecommendedSlide.click({force: true} as any);
       await expect(this.selectedItemInRecommended).toBeDisplayed();
-      await this.selectedItemAddToCartBtn.click();
+      await this.selectedItemAddToCartBtn.click({force: true} as any);
     }
   }
 

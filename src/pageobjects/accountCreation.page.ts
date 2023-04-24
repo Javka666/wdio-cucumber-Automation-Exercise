@@ -122,6 +122,7 @@ class AccountCreationPage  {
 
 
   async submitAccountCreationForm() {
+    await this.createAccountButton.scrollIntoView();
     await this.createAccountButton.click();
   }
 

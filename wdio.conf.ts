@@ -32,38 +32,42 @@ export const config: Options.Testrunner = {
     // will be called from there.
     //
     specs: [
-      'src/features/**/*.feature',
-        './features/**/*.feature'
+      'src/features/**/*.feature'
     ],
     // Patterns to exclude.
     exclude: [
 
-        './src/features/cartsTests/addAndVerifyProductInCart.feature',
-        './src/features/cartsTests/addReviewOnProduct.feature',
-        './src/features/cartsTests/addToCartFromRecommendedItems.feature',
-        './src/features/cartsTests/viewAndCartBrandProducts.feature',
+       // './src/features/cartsTests/addAndVerifyProductInCart.feature',
+       // './src/features/cartsTests/addReviewOnProduct.feature',
+       //  './src/features/cartsTests/addToCartFromRecommendedItems.feature',
+       //  './src/features/cartsTests/viewAndCartBrandProducts.feature',
+       //  './src/features/mainPage/verifyScrollUpAndScrollDown.feature',
+       //  './src/features/mainPage/verifyScrollUpButton.feature',
+       //  './src/features/mainPage/verifySubscription.feature',
+       //  './src/features/categoryProductsView.feature',
+       //  './src/features/expectContactUS.feature',
+       //  './src/features/expectTestCasesPage.feature',
+       //  './src/features/viewProductsInCart.feature',
+       //
+       //  //Login
+       //  './src/features/loginUserWithCorrectCredentials.feature',
+       //  './src/features/loginWithIncorrectCredentials.feature',
+       //  './src/features/searchAfterLogin.feature',
 
-        './src/features/mainPage/verifyScrollUpAndScrollDown.feature',
-        './src/features/mainPage/verifyScrollUpButton.feature',
-        './src/features/mainPage/verifySubscription.feature',
 
+        // Register
         './src/features/signUpTests/registerAndDeleteAcc.feature',
         './src/features/signUpTests/registerAndLogOut.feature',
         './src/features/signUpTests/registerWithExistingMail.feature',
+
+        // To delete an account
+        './src/features/loginAndDelete.feature',
+        // First Delete an account
+        './src/features/proceedToCheckout.feature',
         './src/features/signUpTests/verifyAddressDetailsInCheckoutPage.feature',
 
-        './src/features/apiTests.feature',
-        './src/features/categoryProductsView.feature',
-        './src/features/expectContactUS.feature',
-        './src/features/loginUserWithCorrectCredentials.feature',
-        './src/features/loginWithIncorrectCredentials.feature',
-        './src/features/searchAfterLogin.feature',
-        './src/features/expectTestCasesPage.feature',
-         './src/features/viewProductsInCart.feature',
+        // FIX
 
-           // FIX
-        './src/features/proceedToCheckout.feature',
-   
     ],
     //
     // ============
@@ -218,7 +222,7 @@ export const config: Options.Testrunner = {
         // <number> timeout for step definitions
         timeout: 60000,
         // <boolean> Enable this config to treat undefined definitions as warnings.
-        ignoreUndefinedDefinitions: true
+        ignoreUndefinedDefinitions: false
     },
     
     //

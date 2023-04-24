@@ -30,5 +30,5 @@ Feature: Proceed to checkout and place order
     And enter payment details: Name on Card, Card Number, CVC, Expiration date.
     When click "Pay and Confirm Order" button.
     Then verify success message "Your order has been placed successfully!".
-    # When Click "Delete Account" button.
-    # Then verify "ACCOUNT DELETED!".
+     When Click "Delete Account" button.
+     Then verify "ACCOUNT DELETED!".

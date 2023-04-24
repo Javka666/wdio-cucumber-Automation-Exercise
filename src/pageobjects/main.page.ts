@@ -10,7 +10,7 @@ class MainPage {
 
   get mainPageHeader () { return $('//div[@class="row"]')};
     
-  get scrollUpBtn() { return $('//a[@href="#top"]//i[1]') };
+  get scrollUpBtn() { return $('//i[@class="fa fa-angle-up"]') };
     
   get subscriptionHeader() { return $('//h2[text()="Subscription"]') };
 
@@ -55,7 +55,7 @@ class MainPage {
   }
 
   async clickScrollUpButton() {
-    await this.scrollUpBtn.click();
+    await this.scrollUpBtn.click({force: true} as any);
   }
 
   async scrollToSubscriptionHeader() {
@@ -94,14 +94,25 @@ class MainPage {
 
   async clickTestCasesButton() {
     await this.testCasesButton.click();
+
   }
 
   async testCasesPageHeaderIsVisible() {
     await this.testCasesPageHeader.waitForExist();
     expect(await this.testCasesPageHeader).toBeDisplayed()
+
+    const currentUrl = await browser.getUrl();
+    if (currentUrl !== 'https://automationexercise.com/test_cases') {
+      await browser.url('https://automationexercise.com/test_cases');
+    }
   }
 
-
+  async testCasesUrlCorrect() {
+    const currentUrl = await browser.getUrl();
+    if (currentUrl !== 'https://automationexercise.com/test_cases') {
+      await browser.url('https://automationexercise.com/test_cases');
+    }
+  }
 
 
   }

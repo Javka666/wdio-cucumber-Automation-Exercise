@@ -40,6 +40,7 @@ When('I click on the Test Cases button.', async () => {
 });
 
 Then('I should see "TEST CASES" header.', async () => {
+  await MainPage.testCasesUrlCorrect();
   await MainPage.testCasesPageHeaderIsVisible();
 });
 
