@@ -1,8 +1,10 @@
-Feature: Search Products and Verify Cart After Login
+Feature: Search Products and see if the products are still in cart after login.
+  As a user,
+  I want the chosen products to be displayed in my profile cart even if I didn't login when I was choosing them.
 
  Scenario: Search Products and Verify Cart After Login
    Given I navigate to Main Page.
-   Then I should see main page.
+   Then I should see Main Page.
    When I click "Products" button.
    Then I am on the All Products page.
    When Enter product name in search input and click search button.

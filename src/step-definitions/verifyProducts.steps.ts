@@ -15,7 +15,7 @@ When('I click the "View Product" button of the first product.', async () => {
   await AllProductsPage.clickViewProductButton();
 });
 
-Then('I should be on the product detail page.', async () => {
+Then('I should be on the product details page.', async () => {
   await RandomProductPage.productsInformationBlockIsVisible();
 });
 
@@ -48,7 +48,7 @@ Then('verify text "SUBSCRIPTION".', async () => {
   await MainPage.subscriptionHeaderIsVisible();
 });
 
-When('I enter email address in input and click arrow button.', async () => {
+When('I input email address and click arrow button.', async () => {
   await RandomProductPage.enterNameAndEmail();
 });
 
@@ -60,7 +60,7 @@ Then('verify text "SUBSCRIPTION" on "Cart" page.', async () => {
   await MainPage.subscriptionHeaderIsVisible();
 });
 
-When('I enter email address in input and click arrow button on "Cart" page.', async () => {
+When('I input email address and click arrow button on "Cart" page.', async () => {
   await RandomProductPage.enterNameAndEmail();
 });
 
@@ -96,7 +96,7 @@ Then('I Verify that I am navigated to that category page.', async () => {
   await AllProductsPage.expectTshirtsPageIsOpen();
 });
 
-Then('I verify that Brands are visible on left side bar.', async () => {
+Then('I verify that Brands are visible on the left side bar.', async () => {
   await AllProductsPage.expectBrandBarIsVisible();
 });
 
@@ -155,7 +155,7 @@ When('I enter name, email and review.', async () => {
   await RandomProductPage.enterReviewCredentials();
 });
 
-When('Click "Submit" button.', async () => {
+When('click "Submit" button.', async () => {
   await RandomProductPage.clickReviewSubmitButton();
 });
 
@@ -177,11 +177,11 @@ Then('Verify that product is displayed in cart page.', async () => {
 });
 
 
-Then('Verify that the delivery address is same address filled at the time registration of account.', async () => {
+Then('I verify that the delivery address is same address filled at the time of account registration.', async () => {
   await AccountCreationPage.expectDeliveryForm();
 });
 
-Then('Verify that the billing address is same address filled at the time registration of account.', async () => {
+Then('I verify that the billing address is same address filled at the time of account registration.', async () => {
   await AccountCreationPage.expectBillingForm();
 });
 
@@ -201,11 +201,11 @@ Then('Verify that page is scrolled up and "Full-Fledged practice website for Aut
   await MainPage.expectHomePageHeaderIsVisible();
 });
 
-Then('check the cart contains both products.', async () => {
+Then('I check if the cart contains both products.', async () => {
   await CartPage.expectItemsInViewCartAreVisible();
 });
 
-Then('verify the prices, quantities, and total price are correct.', async () => {
+Then('I verify the prices, quantities, and total price is correct.', async () => {
   await CartPage.expectCorrectnessPrices();
 });
 

@@ -44,7 +44,7 @@ When('I click "RegisterOrLogin" button.', async () => {
   await CartPage.clickRegisterOrLoginButton();
 });
 
-When('I back to Main Page.', async () => {
+When('I go back to Main Page.', async () => {
   await AllProductsPage.navigate();
 });
 

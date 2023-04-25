@@ -23,7 +23,7 @@ class ContactUsPage {
     expect(await this.header).toBeDisplayed()
   }
 
-  async enterContactDetails(name: string, email: string, subject: string, message: string): Promise<void> {
+  async enterContactDetails(name: string, email: string, subject: string, message: string) {
     await (await this.nameField).setValue(name);
     await (await this.emailField).setValue(email);
     await (await this.subjectField).setValue(subject);
@@ -31,9 +31,7 @@ class ContactUsPage {
   }
 
   async uploadFile() {
-
     const filePath = '/Users/aleksandrpuchek/Desktop/wdio-cucumber/src/evil_angry';
-
     await this.fileUploadField.setValue(filePath);
   }
 

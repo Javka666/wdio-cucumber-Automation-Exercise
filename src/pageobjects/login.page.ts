@@ -44,7 +44,7 @@ class LoginPage {
 
   async enterExistingNameAndEmailAndClickSignUpBtn(): Promise<void> {
     const name = "Alex Morales";
-    const email = "alexM@gmail.com";
+    const email = "alexM@mail.com";
     await this.signUpNameInput.waitForExist();
     await this.signUpNameInput.setValue(name);
     await this.signUpEmailInput.setValue(email);

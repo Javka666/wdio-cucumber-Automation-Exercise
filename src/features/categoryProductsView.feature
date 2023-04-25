@@ -1,8 +1,10 @@
-Feature: As a user I want to see different brands of products
+Feature: View Category Products
+  As a user,
+  I want to see if the products filter works correctly.
 
   Scenario: View Category Products
     Given I navigate to Main Page.
-    Then I should see main page.
+    Then I should see Main Page.
     Then I should see Category bar.
     When I click "Women" button.
     And I click "Tops" button. 

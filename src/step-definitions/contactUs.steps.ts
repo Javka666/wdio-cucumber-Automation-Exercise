@@ -21,10 +21,7 @@ Then('I should see a success message.', async () => {
   await ContactUsPage.waitForSuccessMessage()
 });
 
-Then('I should see main page.', async () => {
+Then('I should see Main Page.', async () => {
   await ContactUsPage.homePageHeaderIsVisible();
 });
 
-Then('should see main page.', async () => {
-  await ContactUsPage.homePageHeaderIsVisible();
-});

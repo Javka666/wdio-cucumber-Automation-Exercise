@@ -16,7 +16,7 @@ class AccountCreationPage  {
 
   get yearOfBirth() { return $('//select[@data-qa="years"]') };
 
-  get newsletterCheckbox() { return $('//label[text()="Sign up for our newsletter!"]') };
+  get newsLetterCheckbox() { return $('//label[text()="Sign up for our newsletter!"]') };
 
   get specialOffersCheckbox() { return $('//label[text()="Receive special offers from our partners!"]') };
 
@@ -108,7 +108,7 @@ class AccountCreationPage  {
    await this.dayOfBirth.selectByVisibleText(this.testPerson.day);
    await this.monthOfBirth.selectByVisibleText(this.testPerson.month);
    await this.yearOfBirth.selectByVisibleText(this.testPerson.year);
-   await this.newsletterCheckbox.click();
+   await this.newsLetterCheckbox.click();
    await this.specialOffersCheckbox.click();
    await this.company.setValue(this.testPerson.company);
    await this.address1.setValue(this.testPerson.address1);

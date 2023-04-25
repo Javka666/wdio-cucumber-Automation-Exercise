@@ -37,22 +37,22 @@ export const config: Options.Testrunner = {
     // Patterns to exclude.
     exclude: [
 
-       // './src/features/cartsTests/addAndVerifyProductInCart.feature',
-       // './src/features/cartsTests/addReviewOnProduct.feature',
-       //  './src/features/cartsTests/addToCartFromRecommendedItems.feature',
-       //  './src/features/cartsTests/viewAndCartBrandProducts.feature',
-       //  './src/features/mainPage/verifyScrollUpAndScrollDown.feature',
-       //  './src/features/mainPage/verifyScrollUpButton.feature',
-       //  './src/features/mainPage/verifySubscription.feature',
-       //  './src/features/categoryProductsView.feature',
-       //  './src/features/expectContactUS.feature',
-       //  './src/features/expectTestCasesPage.feature',
-       //  './src/features/viewProductsInCart.feature',
-       //
-       //  //Login
-       //  './src/features/loginUserWithCorrectCredentials.feature',
-       //  './src/features/loginWithIncorrectCredentials.feature',
-       //  './src/features/searchAfterLogin.feature',
+        './src/features/cartsTests/addAndVerifyProductInCart.feature',
+        './src/features/cartsTests/addReviewOnProduct.feature',
+        './src/features/cartsTests/addToCartFromRecommendedItems.feature',
+        './src/features/cartsTests/viewAndCartBrandProducts.feature',
+        './src/features/mainPage/verifyScrollUpAndScrollDown.feature',
+        './src/features/mainPage/verifyScrollUpButton.feature',
+        './src/features/mainPage/verifySubscription.feature',
+        './src/features/categoryProductsView.feature',
+        './src/features/expectContactUS.feature',
+        './src/features/expectTestCasesPage.feature',
+        './src/features/viewProductsInCart.feature',
+
+        //Login
+        './src/features/loginUserWithCorrectCredentials.feature',
+        './src/features/loginWithIncorrectCredentials.feature',
+        './src/features/searchAfterLogin.feature',
 
 
         // Register
