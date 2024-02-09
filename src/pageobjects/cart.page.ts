@@ -1,7 +1,7 @@
+
 class CartPage {
 
-
-  get cartIsEmptyAlert() { return $('//b[text()="Cart is empty!"]') };
+  get emptyCartContainer() { return $('#empty_cart') };
 
   get firstItemDeleteBtn() { return $('//td[@class="cart_delete"]//a[1]') };
 
@@ -25,82 +25,7 @@ class CartPage {
 
   get registerOrLoginBtn() { return $('//u[text()="Register / Login"]') };
 
-
-
-  async expectCartIsEmptyAlertIsVisible() {
-    await (await this.cartIsEmptyAlert).scrollIntoView();
-    expect(await this.cartIsEmptyAlert).toBeDisplayed();
-  }
-
-  async clickFirstDeleteBtnInCart(): Promise<void> {
-    await (await this.firstItemDeleteBtn).scrollIntoView();
-    await this.firstItemDeleteBtn.click({force: true} as any);
-    if (await this.secondItemDeleteBtn.isExisting()) {
-      await this.secondItemDeleteBtn.click({force: true} as any);
-    }
-  }
-
-
-
-
-  async clickProceedToCheckOutButton() {
-    await this.proceedToCheckoutBtn.click();
-  }
-
-  async getFirstCartProductQuantity(): Promise<number> {
-    return parseFloat((await this.cartQuantity.getText()).toString().replace(/\s/g, ''));
-  }
-
-  async expectQuantity() {
-    const firstCartProductQuantity = await this.getFirstCartProductQuantity();
-    expect(firstCartProductQuantity).toEqual(4);
-  }
-
-  async expectCartPageHeaderIsVisible() {
-    expect(await this.cartPage).toBeDisplayed();
-  }
-
-
-  async getFirstCartProductPrice(): Promise<number> {
-    return parseFloat((await this.firstProductPriceInCart.getText()).toString().replace(/\s/g, ''));
-  }
-
-  async getFirstCartProductTotalPrice(): Promise<number> {
-    return parseFloat((await this.firstProductTotalPriceInCart.getText()).toString().replace(/\s/g, ''));
-  }
-
-  async expectItemsInViewCartAreVisible() {
-    expect(await this.firstItemInViewCart).toBeDisplayed();
-    expect(await this.secondItemInViewCart).toBeDisplayed();
-  }
-
-  async expectFirstItemInCartIsVisible() {
-    await (await this.firstItemInViewCart).waitForExist();
-    expect(await this.firstItemInViewCart).toBeDisplayed();
-  }
-
-  async expectCorrectnessPrices() {
-    const firstCartProductPrice = await this.getFirstCartProductPrice();
-    const firstCartProductTotalPrice = await this.getFirstCartProductTotalPrice();
-    const secondCartProductPrice = await this.getFirstCartProductPrice();
-    const secondCartProductTotalPrice = await this.getFirstCartProductTotalPrice();
-    expect(firstCartProductPrice).toEqual(firstCartProductTotalPrice);
-    expect(secondCartProductPrice).toEqual(secondCartProductTotalPrice);
-  }
-
-
-
-  async verifyCheckOutModalIsVisible () {
-    await this.checkoutModalAlert.waitForExist();
-    expect(await this.checkoutModalAlert).toBeDisplayed()
-  }
-
-
-
-  async clickRegisterOrLoginButton() {
-    await this.registerOrLoginBtn.click();
-  }
-
+  get shoppingCartBreadcrumb () { return $('//ol[@class="breadcrumb"]//li[text()="Shopping Cart"]')}
 
 }
 export default new CartPage();
