@@ -1,11 +1,12 @@
-Feature: Verify Scroll Up functionality and Scroll Down functionality
+Feature: Verify Scroll Up using "Arrow" button
   As a user,
-  I want to be able to scroll through the page down to bottom and vice versa.
+  I want to be able to scroll through the page down to bottom and vice versa using arrow button.
 
-  Scenario: Verify Scroll Up and Scroll Down functionality
+  @smoke @fast
+  Scenario: Verify Scroll Up functionality
     Given Navigate to Main Page.
     And Should see "Header" on "Main Page".
     And Scroll to "subscription header" to "Footer".
     Then Check that "subscription header" on "Footer" contains "SUBSCRIPTION".
-    And Scroll to "logo" on "Header".
+    When Click "scroll up" button on "Footer".
     And Should see "logo" on "Header".
